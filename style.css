@@ -1,0 +1,1431 @@
+* {
+    box-sizing: border-box; /* Evita que los paddings ensanchen las cajas */
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Corta cualquier cosa que intente salirse por la derecha */
+    position: relative;
+}
+@media (max-width: 768px) {
+    .hero-content {
+        width: 100%;
+        padding: 0 20px; /* Margen interno para que el texto no pegue al borde */
+        box-sizing: border-box;
+    }
+
+    .giant-title {
+        font-size: 10vw !important; /* Tamaño fluido: se adapta al ancho de la pantalla */
+        word-wrap: break-word;
+        max-width: 100%;
+    }
+
+    .cards-container {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column; /* Una carta debajo de otra */
+        align-items: center;
+    }
+
+    .card {
+        width: 100% !important; /* Que la carta ocupe todo el ancho disponible */
+        max-width: 350px; /* Pero que no se vea gigante en tablets */
+        margin: 10px 0;
+    }
+}
+/* --- ARREGLO DEFINITIVO NAV MÓVIL --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 10px 0;
+    border-bottom: 1px solid #d4af37;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    max-width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 8px; /* Espacio mínimo entre botones */
+}
+
+.nav-link-gold {
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px; /* Tamaño pequeño pero legible */
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav-reserva-gold {
+    background: #d4af37;
+    color: #000 !important;
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* Para el logo en móvil */
+@media (max-width: 400px) {
+    .nav-logo {
+        font-size: 1.2rem !important;
+    }
+    .nav-links li {
+        margin-left: 5px;
+    }
+}
+.footer-map iframe {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.footer-grid {
+    display: flex;
+    flex-direction: column; /* Todo en una columna en móvil */
+    padding: 20px;
+    gap: 30px;
+}
+
+:root {
+    --oro: #c5a059;
+    --negro: #121212;
+    --blanco: #ffffff;
+    --gris: #f4f4f4;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+/* Hero estilo Torremolinos */
+.hero {
+    height: 100vh;
+    background: url('IMG_2950.jpeg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin: 10px 0;
+    line-height: 1.2;
+}
+
+.subtitle {
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+
+.line {
+    width: 60px;
+    height: 2px;
+    background: var(--oro);
+    margin: 20px auto;
+}
+
+.btn-gold {
+    padding: 15px 40px;
+    border: 1px solid var(--oro);
+    color: var(--oro);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+
+.btn-gold:hover {
+    background: var(--oro);
+    color: var(--negro);
+}
+
+/* Secciones de abajo */
+.actions {
+    background: var(--blanco);
+    color: var(--negro);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Para móvil */
+    gap: 40px;
+}
+
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+}
+
+.link {
+    color: var(--oro);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+}
+/* Barra de Navegación */
+/* Barra de Navegación Recta */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Empieza sólida */
+    background: rgba(0, 0, 0, 1); 
+    padding: 20px 0;
+    transition: all 0.5s ease; /* Para que el cambio a transparente sea suave */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px; /* Más espacio a los lados para que sea recto */
+}
+
+/* Estado cuando bajas el scroll (Transparente) */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.2) !important; /* Casi invisible */
+    backdrop-filter: blur(8px); /* Efecto cristal elegante */
+    padding: 12px 0; /* Se hace un poco más fina */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: 0.3s;
+}
+
+/* Botón Reserva Recto */
+.nav-reserva {
+    border: 1px solid white;
+    padding: 10px 25px !important;
+    border-radius: 0px !important; /* Totalmente recto, nada de curvas */
+}
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;900&family=Valu:wght@400;700&display=swap');
+
+:root {
+    --accent: #ffffff;
+    --bg: #000000;
+}
+
+body {
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+    color: white;
+    margin: 0;
+}
+
+/* NAVBAR RECTA Y ÉPICA */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%; z-index: 1000;
+    padding: 30px 0;
+    background: transparent; /* Empieza invisible */
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar.scrolled {
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px); /* Efecto cristal pro */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    font-family: 'Syncopate', sans-serif;
+    letter-spacing: 8px;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { opacity: 1; }
+
+/* HERO SECTION GIGANTE */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#background-slider {
+    position: absolute;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6) scale(1.1);
+    transition: background-image 2s ease-in-out, transform 10s linear;
+}
+
+.giant-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: clamp(5rem, 15vw, 12rem); /* Texto masivo */
+    line-height: 0.8;
+    margin: 0;
+    letter-spacing: -5px;
+}
+
+.eyebrow {
+    letter-spacing: 12px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.6);
+}
+
+.hero-line {
+    width: 100px; height: 4px;
+    background: white;
+    margin: 40px 0;
+}
+
+/* Animación de entrada */
+.reveal-text {
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@keyframes reveal {
+    0% { opacity: 0; transform: translateY(100px); filter: blur(20px); }
+    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.discover-section {
+    background: #0a0a0a;
+    padding: 100px 5%;
+    text-align: left;
+}
+
+.section-title h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-top: 10px;
+    letter-spacing: -2px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.card {
+    position: relative;
+    height: 500px;
+    background: #111;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    border-color: rgba(255,255,255,0.4);
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    transition: transform 0.8s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.1);
+    filter: brightness(0.9);
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    box-sizing: border-box;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.btn-card {
+    display: inline-block;
+    padding: 10px 20px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.btn-card:hover {
+    background: #c5a059; /* Un toque dorado al hover */
+    color: white;
+}
+.epic-footer {
+    background: #000;
+    color: #fff;
+    padding: 100px 5% 40px 5%;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    gap: 50px;
+}
+
+.footer-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    letter-spacing: -3px;
+    margin: 0;
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: #666;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.footer-grid {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-col h4 {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: #c5a059; /* Dorado para resaltar títulos */
+    margin-bottom: 25px;
+}
+
+.footer-col p, .social-links a {
+    font-size: 0.85rem;
+    color: #999;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* El mapa estilizado */
+.footer-map {
+    margin: 60px 0;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #444;
+}
+
+.back-to-top {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back-to-top:hover {
+    color: #c5a059;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .footer-grid { flex-direction: column; gap: 40px; }
+    .footer-logo { font-size: 2.5rem; }
+}
+/* AJUSTES ÉPICOS PARA MÓVIL */
+@media (max-width: 768px) {
+    /* Barra de navegación: Simplificada para pulgares */
+    .nav-container {
+        padding: 0 20px;
+    }
+    
+    .nav-links {
+        gap: 15px; /* Menos espacio para que quepa todo en una línea */
+    }
+
+    .nav-links a {
+        font-size: 0.6rem; /* Letra pequeña pero muy legible (High-end) */
+        letter-spacing: 2px;
+    }
+
+    .nav-reserva {
+        padding: 6px 12px !important;
+    }
+
+    /* Título Gigante: Ajuste de escala para que no se rompa */
+    .giant-title {
+        font-size: 5rem; /* Sigue siendo masivo pero cabe en el ancho del móvil */
+        letter-spacing: -2px;
+        line-height: 0.9;
+    }
+
+    .eyebrow {
+        font-size: 0.6rem;
+        letter-spacing: 8px;
+    }
+
+    /* Sección Discover: Tarjetas a pantalla completa */
+    .discover-section {
+        padding: 60px 20px;
+    }
+
+    .card {
+        height: 400px; /* Un poco más cortas para que se vea la siguiente */
+    }
+
+    .card-content {
+        padding: 25px;
+    }
+
+    /* Footer: Todo al centro para mejor lectura */
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .footer-logo {
+        font-size: 2.5rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+.mobile-whatsapp-btn {
+    display: none; /* Oculto en PC */
+}
+
+@media (max-width: 768px) {
+    .mobile-whatsapp-btn {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #fff;
+        color: #000;
+        width: 120px;
+        height: 50px;
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        animation: pulseBtn 2s infinite;
+    }
+}
+
+@keyframes pulseBtn {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+.back-to-top {
+    text-decoration: none;
+    color: #666; /* Un tono discreto para empezar */
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.back-to-top:hover {
+    color: #fff; /* Se ilumina al pasar el dedo o ratón */
+    transform: translateY(-3px); /* Pequeño salto épico */
+}
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 3000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.95); /* Negro casi puro */
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+    from {transform:scale(0.8); opacity:0} 
+    to {transform:scale(1); opacity:1}
+}
+
+.close-modal {
+    position: absolute;
+    top: 30px; right: 50px;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    overflow-y: auto; /* Permite bajar para ver la segunda hoja */
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    gap: 20px;
+}
+
+.modal-content img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border: 1px solid #333;
+}
+
+.close-modal {
+    position: fixed;
+    top: 20px; right: 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+}
+.social-links a i {
+    margin-right: 10px; /* Separa el logo del texto */
+    font-size: 1.2rem;   /* Tamaño del logo */
+    color: #d4af37;      /* Color dorado para que pegue con Valú */
+}
+
+.social-links a:hover i {
+    color: #fff;         /* Al pasar el ratón se vuelve blanco */
+}
+/* Título principal con brillo metálico */
+.giant-title, .section-title h2 {
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+    font-weight: bold;
+}
+
+/* Brillo para los iconos de redes sociales */
+.social-links a i {
+    color: #fcf6ba; /* Dorado muy claro casi blanco para que brille */
+    text-shadow: 0 0 10px rgba(252, 246, 186, 0.8);
+}
+.card {
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8); /* Sombra profunda */
+    transition: transform 0.3s ease;
+}
+
+.card:active { /* Efecto al tocar en el móvil */
+    transform: scale(0.98);
+    border-color: #d4af37;
+}
+
+/* Botón "VER CARTA" con más luz */
+.btn-card {
+    background: #fff !important;
+    color: #000 !important;
+    font-weight: 700;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    border: none;
+}
+.footer-col  { /* El párrafo del garaje */
+    background: rgba(212, 175, 55, 0.1);
+    padding: 8px;
+    border-radius: 5px;
+    border-left: 3px solid #d4af37;
+    display: inline-block;
+    color: #fcf6ba;
+}
+@media (max-width: 768px) {
+    .giant-title {
+        font-size: 2.5rem; /* Ajusta el tamaño para que no se corte */
+        line-height: 1.1;
+    }
+    
+    .hero-content {
+        padding: 20px;
+    }
+
+    .cards-container {
+        gap: 20px; /* Más espacio entre cartas para evitar toques accidentales */
+    }
+}
+
+
+.giant-title {
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text; /* Esto hace que el color solo vaya al texto */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Esto hace que el interior del texto sea el degradado */
+    color: transparent;
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.5));
+}
+/* Estilo para los recuadros dorados del footer */
+.footer-box-gold {
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    background: rgba(212, 175, 55, 0.05); /* Un toque sutil de fondo */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); /* Brillo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al tocar en el móvil */
+.footer-box-gold:active {
+    background: rgba(212, 175, 55, 0.2);
+    transform: scale(0.98);
+}
+.giant-title, .section-title h2 {
+    /* 1. Definimos el degradado */
+    background: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 50%, #aa771c 100%);
+    
+    /* 2. IMPORTANTE: Recortamos el fondo para que solo viva dentro de las letras */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* 3. Hacemos el color del texto transparente para que se vea el degradado de fondo */
+    -webkit-text-fill-color: transparent;
+    
+    /* 4. Color de respaldo por si el navegador es antiguo */
+    color: #d4af37; 
+    
+    /* 5. Quitamos cualquier fondo sólido que esté causando el bloque */
+    background-color: transparent !important;
+    
+    display: inline-block; /* Asegura que el recorte funcione bien */
+    width: auto;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.footer-box-gold {
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    /* Fondo casi transparente para que no tape nada */
+    background: rgba(212, 175, 55, 0.05); 
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    color: #ffffff; /* Texto siempre blanco */
+    display: block;
+    text-align: center;
+}
+/* Títulos Dorados con efecto metalizado */
+.gold-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Botones Dorados Elegantes */
+.gold-btn {
+    border: 1px solid #BF953F !important;
+    color: #BF953F !important;
+    background: transparent;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Efecto al pasar el ratón por el botón */
+.gold-btn:hover {
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #AA771C) !important;
+    color: #000 !important;
+    box-shadow: 0 0 20px rgba(191, 149, 63, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Opcional: Un borde dorado muy fino a la carta completa */
+.card {
+    border: 1px solid rgba(191, 149, 63, 0.2);
+    background: #111; /* Asegúrate de que el fondo sea oscuro */
+    transition: border 0.3s ease;
+}
+
+.card:hover {
+    border: 1px solid #BF953F;
+}
+/* El nombre principal VALU */
+.gold-brand-text {
+    font-size: 3.5rem; /* Grande y potente */
+    font-weight: 900;
+    letter-spacing: 12px; /* Espaciado extremo = Lujo máximo */
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    background: linear-gradient(to bottom, #BF953F 22%, #FCF6BA 45%, #B38728 50%, #FBF5B7 65%, #AA771C 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.5));
+    display: inline-block;
+}
+
+/* La línea divisoria sutil */
+.footer-divider {
+    height: 1px;
+    width: 60px;
+    background: linear-gradient(to right, transparent, #BF953F, transparent);
+    margin: 15px auto;
+}
+
+/* El eslogan */
+.footer-tagline {
+    font-size: 13px;
+    font-style: italic;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: none;
+    font-family: 'Playfair Display', serif; /* Si puedes usar una fuente con remates aquí, mejor */
+}
+/* Barra de navegación efecto Cristal Negro */
+.navbar {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px); /* Efecto cristal empañado */
+    border-bottom: 1px solid rgba(191, 149, 63, 0.3);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* El logo Valú en pequeño pero potente */
+.nav-logo.gold-brand-text {
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-weight: 900;
+    background: linear-gradient(to bottom, #BF953F, #FCF6BA, #AA771C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Enlaces dorados sutiles */
+.nav-link-gold {
+    color: #eee;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link-gold:hover {
+    color: #FCF6BA;
+    text-shadow: 0 0 8px rgba(191, 149, 63, 0.6);
+}
+
+/* Botón RESERVAR tipo Joyería */
+.nav-reserva-gold {
+    border: 1px solid #BF953F;
+    padding: 8px 20px;
+    color: #BF953F !important;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: all 0.4s;
+    background: rgba(191, 149, 63, 0.05);
+}
+
+.nav-reserva-gold:hover {
+    background: #BF953F;
+    color: #000 !important;
+    box-shadow: 0 0 15px rgba(191, 149, 63, 0.5);
+}
+/* Animación de movimiento masivo */
+@keyframes lluviaOroMasiva {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 0 -600px, 0 -300px; }
+}
+
+/* Aplicamos el efecto SOLO a las secciones negras */
+.discover-section, .epic-footer {
+    position: relative;
+    background-color: #000 !important;
+    overflow: hidden;
+}
+
+/* Creamos una capa de partículas brutal */
+.discover-section::before, .epic-footer::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* Doble capa de partículas: unas grandes y otras medianas */
+    background-image: 
+        /* Capa 1: Partículas Grandes */
+        radial-gradient(5px 5px at 10% 10%, #BF953F, transparent),
+        radial-gradient(6px 6px at 30% 50%, #FCF6BA, transparent),
+        radial-gradient(5px 5px at 60% 20%, #B38728, transparent),
+        radial-gradient(7px 7px at 80% 80%, #FBF5B7, transparent),
+        radial-gradient(5px 5px at 90% 30%, #BF953F, transparent),
+        /* Capa 2: Más cantidad */
+        radial-gradient(3px 3px at 15% 85%, #FFFFFF, transparent),
+        radial-gradient(4px 4px at 45% 45%, #FCF6BA, transparent),
+        radial-gradient(3px 3px at 75% 15%, #B38728, transparent),
+        radial-gradient(4px 4px at 25% 65%, #BF953F, transparent),
+        radial-gradient(3px 3px at 55% 95%, #FBF5B7, transparent);
+    
+    background-size: 600px 600px; /* Tamaño del patrón */
+    opacity: 0.7; /* Para que brillen fuerte */
+    z-index: 0;
+    animation: lluviaOroMasiva 12s linear infinite;
+    /* Brillo neón para que parezcan luces */
+    filter: drop-shadow(0 0 10px rgba(191, 149, 63, 0.8));
+}
+
+/* Aseguramos que el contenido (texto y cartas) esté por encima de las chispas */
+.discover-section .section-title, 
+.discover-section .cards-container,
+.epic-footer .footer-top,
+.epic-footer .footer-map {
+    position: relative;
+    z-index: 2;
+}
+
+/* El Header (la foto de arriba) lo dejamos limpio */
+.hero {
+    position: relative;
+    z-index: 10;
+    background-color: #000; /* Por si la foto tarda en cargar */
+}
+/* Animación del barrido de luz */
+@keyframes barridoGolfo {
+    0% { transform: translateX(-150%) skewX(-25deg); }
+    30% { transform: translateX(150%) skewX(-25deg); }
+    100% { transform: translateX(150%) skewX(-25deg); }
+}
+
+/* El contenedor del reflejo */
+.discover-section::after, .epic-footer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px; /* Ancho del rayo de luz */
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        transparent, 
+        rgba(252, 246, 186, 0.2), /* Oro muy clarito */
+        rgba(255, 255, 255, 0.4), /* El centro del brillo */
+        rgba(252, 246, 186, 0.2), 
+        transparent
+    );
+    z-index: 1;
+    animation: barridoGolfo 12s infinite; /* Cruza cada 6 segundos */
+    pointer-events: none; /* Para que no moleste al hacer clic */
+}
+
+/* Para que los reflejos no se salgan de su sitio */
+.discover-section, .epic-footer {
+    overflow: hidden;
+}
+.gold-text, .footer-logo {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #BF953F, #FCF6BA, #B38728, #FCF6BA, #BF953F);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: brilloTexto 4s linear infinite;
+}
+
+@keyframes brilloTexto {
+    to { background-position: 200% center; }
+}
+#mainNav {
+    transition: transform 0.4s ease, background 0.3s ease; /* Para que la función 4 se vea fluida */
+}
+
+/* Mejora el toque en las cartas para móvil */
+.card:active {
+    transform: scale(0.98); /* Se hunde un poquito al tocar */
+    filter: brightness(1.2); /* Brilla un poco más */
+    transition: 0.2s;
+}
+/* --- OPTIMIZACIÓN MÓVIL "ESTILO GOLFO" --- */
+
+@media (max-width: 768px) {
+    /* Fondo con textura sutil para que no sea negro plano */
+    body {
+        background: radial-gradient(circle at top, #1a1a1a 0%, #050505 100%);
+    }
+
+    /* Título Gigante con Brillo Dorado */
+    .giant-title {
+        font-size: 2.8rem !important; /* Más impacto visual */
+        line-height: 1;
+        letter-spacing: -1px;
+        background: linear-gradient(to bottom, #fff 0%, #d4af37 50%, #8a6d3b 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+        margin-bottom: 20px;
+    }
+
+    /* La info del Garaje en el Hero */
+    .parking-info span {
+        display: inline-block;
+        font-size: 0.75rem !important;
+        background: rgba(212, 175, 55, 0.1);
+        border: 1px solid #d4af37 !important;
+        padding: 8px 15px !important;
+        border-radius: 50px; /* Estilo cápsula */
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    }
+
+    /* Contenedor de Cartas (Vertical y con espacio) */
+    .cards-container {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card {
+        height: 400px; /* Cartas más altas y elegantes */
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        overflow: hidden;
+        border-radius: 15px;
+        position: relative;
+    }
+
+    .card-content {
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 30%, transparent 100%);
+        padding: 25px 15px !important;
+    }
+
+    .card-content h3 {
+        font-size: 1.5rem !important;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+
+    /* Botón de Reserva Móvil (El que siempre está abajo) */
+    .mobile-whatsapp-btn {
+        width: 90% !important;
+        left: 5% !important;
+        bottom: 20px !important;
+        background: #d4af37 !important; /* Dorado en lugar de verde para seguir el lujo */
+        color: #000 !important;
+        font-weight: 800 !important;
+        text-transform: uppercase;
+        border-radius: 50px !important;
+        padding: 15px 0 !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.4) !important;
+        font-size: 1rem !important;
+    }
+
+    /* Footer estilo Grid 1 columna */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .footer-col h4 {
+        color: #d4af37;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    /* Recuadros de contacto dorados */
+    .footer-col p {
+        margin: 10px 0;
+        font-size: 0.95rem;
+    }
+}
+.giant-title, .section-title h2 {
+    /* Color de base por si falla el degradado */
+    color: #d4af37; 
+    
+    /* El degradado dorado */
+    background: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 50%, #aa771c 100%);
+    
+    /* ESTO ES LO QUE FALLA: Forzamos el recorte al texto */
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    
+    /* Aseguramos que no haya fondo sólido */
+    background-color: transparent !important;
+    
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/* --- AJUSTES PARA CUALQUIER MÓVIL --- */
+@media (max-width: 768px) {
+    /* Contenedor principal del footer */
+.footer-grid {
+    display: flex;
+    flex-direction: column; /* Una debajo de otra en móvil */
+    align-items: center;    /* Centrado horizontal total */
+    gap: 30px;              /* Espacio igual entre cajas */
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Cada una de las cajas (Síguenos, Contacto, Horario) */
+.footer-col {
+    width: 100%;            /* Ocupan el mismo ancho */
+    max-width: 350px;       /* Pero con un tope para que no se estiren de más */
+    text-align: center;     /* Texto al centro */
+    background: rgba(255, 255, 255, 0.03); /* Un fondo sutil para dar forma */
+    padding: 20px;
+    border-left: 2px solid #BF953F; /* El toque dorado lateral de tu imagen */
+    border-radius: 5px;
+}
+
+/* Títulos dorados centrados con la línea debajo */
+.footer-col h4 {
+    color: #BF953F;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block; /* Para que la línea mida lo que el texto */
+}
+
+.footer-col h4::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 1px;
+    background: #BF953F;
+    margin: 8px auto 0;    /* Centra la línea debajo del título */
+}
+
+/* Alineación de los iconos y enlaces */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Iconos al centro */
+    gap: 10px;
+}
+
+.footer-col p {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center; /* Centra el contenido de los párrafos */
+    align-items: center;
+    gap: 8px;
+}
+    
+    /* 1. Ajustar el tamaño de las letras del logo y títulos */
+    .nav-logo.gold-brand-text {
+        font-size: 1.5rem; /* Un poco más pequeño para que no choque con el menú */
+        letter-spacing: 3px;
+    }
+
+    .giant-title {
+        font-size: 2.5rem !important; /* Que no se salga de la pantalla */
+        line-height: 1.1;
+    }
+
+    /* 2. Las cartas: una debajo de otra y con margen */
+    .cards-container {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .card {
+        width: 100% !important; /* Que ocupen todo el ancho del móvil */
+        margin: 0 auto;
+    }
+
+    /* 3. El menú de navegación */
+    .nav-links {
+        gap: 10px; /* Menos espacio entre enlaces para que quepan */
+    }
+
+    .nav-link-gold {
+        font-size: 10px; /* Letra un pelín más pequeña */
+        margin: 0 5px;
+    }
+
+    /* 4. El Footer en móvil: todo centrado */
+    .footer-grid {
+        grid-template-columns: 1fr !important; /* Una sola columna */
+        text-align: center;
+        gap: 40px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* 5. El botón de WhatsApp (RESERVA YA) */
+    .mobile-whatsapp-btn {
+        width: 90%; /* Casi todo el ancho */
+        left: 5%;   /* Centrado */
+        bottom: 20px;
+        padding: 15px;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 50px; /* Más cómodo para el pulgar */
+    }
+}
+
+/* --- AJUSTE PARA MÓVILES MUY PEQUEÑOS (iPhone SE, etc.) --- */
+@media (max-width: 380px) {
+    .nav-links {
+        display: none; /* Opcional: Si es muy pequeño, podrías ocultar el menú y usar un icono */
+    }
+    
+    .giant-title {
+        font-size: 2rem !important;
+    }
+}
+/* 1. Fondo base negro para toda la web */
+body {
+    background-color: #000 !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Unificamos el fondo de partículas en el body para que sea continuo */
+body::before {
+    content: "";
+    position: fixed; /* Esto hace que las partículas no se corten al hacer scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(4px 4px at 5% 15%, #BF953F, transparent),
+        radial-gradient(5px 5px at 20% 40%, #FCF6BA, transparent),
+        radial-gradient(6px 6px at 60% 80%, #FBF5B7, transparent),
+        radial-gradient(5px 5px at 85% 30%, #BF953F, transparent),
+        radial-gradient(4px 4px at 15% 75%, #FFFFFF, transparent);
+    background-size: 400px 400px;
+    opacity: 0.6;
+    z-index: -1; /* Va detrás de todo */
+    animation: lluviaOro 15s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(191, 149, 63, 0.9));
+}
+
+/* 3. El Barrido de Luz (Reflejo) unificado */
+/* Lo ponemos en un div que envuelva las dos secciones o en el body */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px; /* Más ancho para que sea más golfo */
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        transparent, 
+        rgba(252, 246, 186, 0.1), 
+        rgba(255, 255, 255, 0.3), 
+        rgba(252, 246, 186, 0.1), 
+        transparent
+    );
+    z-index: 0;
+    animation: barridoGolfo 8s infinite;
+    pointer-events: none;
+    transform: skewX(-25deg);
+}
+
+/* 4. Quitamos fondos y márgenes de las secciones para que se vean unidas */
+.discover-section, .epic-footer {
+    background: transparent !important; /* IMPORTANTE: Transparente para ver el fondo del body */
+    margin: 0 !important;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
+    z-index: 2; /* El contenido por encima de los reflejos */
+}
+
+/* Animaciones */
+@keyframes lluviaOro {
+    from { background-position: 0 0; }
+    to { background-position: 0 -400px; }
+}
+
+@keyframes barridoGolfo {
+    0% { left: -150%; }
+    30% { left: 150%; }
+    100% { left: 150%; }
+}
